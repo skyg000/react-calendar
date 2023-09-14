@@ -1,19 +1,22 @@
-import background from './background.jpg';
+
 import './App.scss';
 import Home from './comp/Home';
-import {Link,BrowserRouter,Route,Routes} from 'react-router-dom';
+import Calendar1 from './comp/Calendar1'
+import {Link,HashRouter,Route,Routes} from 'react-router-dom';
 function App() {
   return (
-    <BrowserRouter>
+
+
+
+    <HashRouter>
       <main>
-        <img src={background} className='back'/>
-        <h1> 일정관리 </h1>
-        <Link to="/home" className='login'> 로그인 </Link>
-      </main>
       <Routes>
-        <Route path='/home'element={<Home/>}/>
+        <Route path='/'element={<Home/>}/>
+        <Route path='/calendar1'element={<Calendar1/>}/>
       </Routes>
-    </BrowserRouter>
+      
+      </main>
+    </HashRouter>
   );
 }
 

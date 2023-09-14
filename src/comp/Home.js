@@ -1,25 +1,17 @@
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react'
 import '../style/calendar.scss'; 
-import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
-import Calendar1 from '../comp/Calendar1';
+import background from '../background.jpg';
+import { Link } from 'react-router-dom';
 function Home() {
-    const [value, onChange] = useState(new Date());
 
     return (
-        <main>
-            
-            <Calendar onChange={onChange}
-                calendarType="US"
-                formatDay={(locale, date) =>
-                    //xx일 -> xx 으로 format 변경
-                    new Date(date).toLocaleDateString("en-us", {day: "2-digit",})
-                    } 
-                value={value} 
-            />
-        </main>
-    );
+        <>
+            <h1> 일정관리 </h1>
+            <Link to="/calendar1" className='login'> 시작하기 </Link>
+            <img src={background} className='back'/>
+        </>
+    )
 }
 
 export default Home
