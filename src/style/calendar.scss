@@ -1,90 +1,134 @@
-main{
-    h1{
-        position: absolute;
-        top: 10%;
-    }
+@font-face {
+	font-family: "cachildren-kkum.otf";
+	src: url("../font/cachildren-kkum.otf");
+	font-weight: normal;
+	font-style: normal;
 }
 
-
-button {
-    cursor: pointer;
-}
-
-.container {
-    width: 500px;
-    height: 400px;
-    margin: auto;
-    padding: 20px 20px;
-    border: 1px solid rgba(128, 128, 128, 0.267);
+/* 전체 */
+.calendars{
+    font-family: "cachildren-kkum.otf"; 
+    border-radius: 20px 20px 0 0;
+    border: 2px solid pink;
+    text-align: center;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+    top: 30%;
+    left: 10%;
+    }
 
-.container .title {
-    display: flex;
-}
-
-.container .title>button {
-    border: none;
-    margin-left: 5px;
-    height: 20px;
-    align-self: center;
+/* 상단 */
+.react-calendar__navigation {
     background: none;
-}
-
-.container .title .pagination {
-    margin-left: auto;
-    align-self: center;
-}
-
-.container .title .pagination button {
-    margin: 0 10px;
-    border: none;
-    background: none;
-}
-
-.container .week {
-    display: flex;
-}
-
-.container .week .weekday {
-    width: calc(500px / 7);
-    text-align: center;
-}
-
-.container .week .sunday {
-    color: red;
-}
-
-.container .week .saturday {
-    color: blue;
-}
-
-.container .date {
     margin-top: 20px;
-}
+    border-bottom: 4px solid brown;
+    height: 60px;
+    border-radius: 20px 20px 0 0;
+    span {
+        font-size: 24px;
+        font-weight: 600;
+        color:black;
+        }
+    }
+    .react-calendar__navigation button:disabled {
+        background-color: pink;
+        border-radius: 20px 20px 0 0;
+        
+    }
+    .react-calendar__navigation button:enabled:hover,
+    .react-calendar__navigation button:enabled:focus {
+        background-color: pink;
+        
+    }
+/* 월 */
+    .react-calendar__month-view {
+        padding: 12px 32px;
+        abbr {
+          // 텍스트
+            color: rgb(253, 89, 116);
+            font-size: 16px;
+            font-weight: 500;
+            }
+        }
 
-.container .date .weekday {
-    width: calc(500px / 7);
-    float: left;
-    text-align: center;
-    height: 50px;
-    line-height: 50px;
-}
+/* 요일 */
+    .react-calendar__month-view__weekdays {
+        abbr {
+            // 텍스트 부분
+            font-size: 25px;
+            font-weight: 900;
+            }
+        }
 
-.container .date .sunday {
+/* 일 */
+    .react-calendar__tile {
+        text-align: center;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    /*hover, focus, 선택됐을 시 */
+    .react-calendar__tile:enabled:hover,
+    .react-calendar__tile:enabled:focus,
+    .react-calendar__tile--active {
+        background: rgb(221, 223, 221);
+        border-radius: 14px;
+    }
+    
+/* 현재 날짜  */
+    .react-calendar__tile--now {
+        background:pink;
+        border-radius: 14px;
+        }
+        /*hover, focus 시 */
+        .react-calendar__tile--now:enabled:hover,
+        .react-calendar__tile--now:enabled:focus {
+           /*  background: blue; */
+            border-radius: 14px;
+        }
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* .react-calendar__navigation {
+        display: flex;
+        height: 44px;
+        margin-bottom: 1em;
+        }
+    
+    .react-calendar__month-view__days:nth-child(1),
+        :nth-child(7n) {
+        color: blue;
+    }
+    .react-calendar__month-view__days:nth-child(7n+1),
+        :nth-child(7n) {
     color: red;
 }
-
-.container .date .saturday {
-    color: blue;
-}
-
-.container .date .today {
-    background-color: rgb(88, 111, 187);
-    color: white;
-    font-weight: 700;
-    border-radius: 50%;
-}
+    .react-calendar{
+        width: 500px;
+    }
+    .react-calendar__tile--active {
+        color: pink;
+    }
+    .react-calendar__navigation{
+        button{
+            color: black;
+        }
+    }
+ */
