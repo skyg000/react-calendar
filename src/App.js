@@ -12,7 +12,7 @@ function App() {
       <main>
       <Routes>
         <Route path='/'element={<Home/>}/>
-        <Route path='/calendsar1'element={<Calendar1/>}/>
+        <Route path='/calendar1'element={<Calendar1/>}/>
       </Routes>
       
       </main>
