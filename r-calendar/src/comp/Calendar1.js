@@ -1,11 +1,19 @@
 import React, { useRef, useState } from 'react';
 import '../style/calendar.scss'; // css import
 /* import 'react-calendar/dist/Calendar.css'; */
+import axios from 'axios'
 import Calendar from 'react-calendar';
 import Write from './Write';
 import background from '../background.jpg';
 
 function Calendar1() {
+    axios.get('http://localhost:3030/')
+    .then(res=>{
+        console.log(res);
+    })
+    axios.post('http://localhost:3030/insert')
+
+    
     const [value, onChange] = useState();
     let wrcal =useRef()
     let list = function(e){
