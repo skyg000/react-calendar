@@ -1,9 +1,11 @@
-a,abbr{
+
+a,abbr,.msg,.msg1{
   list-style: none;
   text-decoration: none;
 }
-h1,h2,h3,p,a{
+h1,h2,h3,p,a,span,ul{
   font-family: "cachildren-kkum.otf";
+  margin: 0;
 }
 @font-face {
 	font-family: "cachildren-kkum.otf";

@@ -1,35 +1,43 @@
 import React, { useRef, useState } from 'react';
 import '../style/calendar.scss'; // css import
 /* import 'react-calendar/dist/Calendar.css'; */
-import axios from 'axios'
 import Calendar from 'react-calendar';
 import Write from './Write';
+import Kwrite from './Kwrite';
 import background from '../background.jpg';
 
 function Calendar1() {
-    axios.get('http://localhost:3030/')
-    .then(res=>{
-        console.log(res);
-    })
-    axios.post('http://localhost:3030/insert')
-
-    
     const [value, onChange] = useState();
-    let wrcal =useRef()
-    let list = function(e){
+    const wrcal =useRef();
+    const chat = useRef([]);
+    const list = function(e){
         // e.preventDefault();
         console.log( e.getMonth()+1  + '월' + e.getDate() + '일');
-        wrcal.current.classList.add('active')
+        wrcal.current.classList.add('active');
     }
+    const talk = function(e){
+        e.preventDefault();
+        talk.classList.toggle('on');
+    }
+    /* const talk = document.getElementById("chat");
+        if (talk) {
+        // 'classList'를 안전하게 접근합니다.
+        talk.current.classList.add("on");
+        } */
+    /* const talk = function(e){
+        chat.classList.add('on');
+    } */
     /* 년월일을 id로 내용을 msg json 생성해주기 */
     return (
-        
         <article className='T-calendar'>
         <article className='Wr'>
             <Write wrcal={wrcal}/>
-            <img src={background} className='back'/>
+            <Kwrite chat={chat}/>
+            <img src={background} alt='' className='back'/>
         </article>
         <article className='calendars'>
+            <span className='talk' onClick={talk}> talk </span>
+            
             <Calendar onClickDay={list} onChange={onChange}
                 calendarType="US" /* 일 부터 시작 */
                 formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
