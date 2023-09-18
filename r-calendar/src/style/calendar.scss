@@ -4,63 +4,68 @@
 	font-weight: normal;
 	font-style: normal;
 }
-.chat{
-    width: 400px;
-    padding: 10px;
-    position: absolute;
-    right: 50px;
-    top: 30%;
-    border: 2px solid pink;
-    border-radius: 20px;
-    display: none;
-    h2{
-        margin-bottom: 10px;
-    }
-}
-.chat.on{
-    display: flex;
-}
-.msg1{
-    padding-left: 0;
-    font-family: "cachildren-kkum.otf";
-    height: 400px;
-        li{
-            font-size: 20px;
-            border: 1px solid pink;
-            border-radius: 20px;
-            text-align: left;
-            padding: 5px 10px;
-            margin-bottom: 7px;
-            font-family: "cachildren-kkum.otf";
+
+
+
+/* ===================media 1180px============= */
+@media  (max-width:1180px)  {
+   /*  .chat{
+        width: 400px;
+        padding: 10px;
+        position: absolute;
+        right: 50px;
+        top: 30%;
+        border: 2px solid pink;
+        border-radius: 20px;
+        display: none;
+        h2{
+            margin-bottom: 10px;
         }
     }
-    form{
+    .chat.on{
         display: flex;
-        input{
-            margin-right: 15px;
-            background: none;
-            border: 1px solid pink;
-            border-radius: 20px;
-            padding: 5px 10px;
-            font-size: 1rem;
-            font-family: "cachildren-kkum.otf";
-        }
-        input:nth-child(1){
-            background-color: rgb(253, 212, 219)
-        }
-        button{
-            padding: 10px;
-            background: none;
-            border: 1px solid pink;
-            border-radius: 20px;
-            margin-left: 20px;
-            font-family: "cachildren-kkum.otf";
-            font-size: 1rem;
-            background-color: rgb(253, 212, 219)
-        }
     }
-
-
+    .msg1{
+        padding-left: 0;
+        font-family: "cachildren-kkum.otf";
+        height: 400px;
+            li{
+                font-size: 20px;
+                border: 1px solid pink;
+                border-radius: 20px;
+                text-align: left;
+                padding: 5px 10px;
+                margin-bottom: 7px;
+                font-family: "cachildren-kkum.otf";
+            }
+        }
+        form{
+            display: flex;
+            input{
+                margin-right: 15px;
+                background: none;
+                border: 1px solid pink;
+                border-radius: 20px;
+                padding: 5px 10px;
+                font-size: 1rem;
+                font-family: "cachildren-kkum.otf";
+            }
+            input:nth-child(1){
+                background-color: rgb(253, 212, 219)
+            }
+            button{
+                padding: 10px;
+                background: none;
+                border: 1px solid pink;
+                border-radius: 20px;
+                margin-left: 20px;
+                font-family: "cachildren-kkum.otf";
+                font-size: 1rem;
+                background-color: rgb(253, 212, 219)
+            }
+        } */
+    
+    
     /* Write */
     .write{
         width: 400px;
@@ -113,13 +118,26 @@
             background-color: rgb(253, 212, 219);
         }
     }
-.todo{
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    background-color: pink;
-    
-}
+    .todo{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        background-color: pink;
+        
+    }
+    .chat{
+        width: 400px;
+        padding: 10px;
+        position: absolute;
+        right: 50px;
+        top: 5%;
+        border: 2px solid pink;
+        border-radius: 20px;
+        display: none;
+        h2{
+            margin-bottom: 10px;
+        }
+    }
 /* 전체 */
 .calendars{
     width: 60%;
@@ -228,23 +246,16 @@
             border-radius: 14px;
         }
 
-
-/* ===================media 1180px============= */
-@media  (max-width:1180px)  {
-    .chat{
-        width: 400px;
-        padding: 10px;
-        position: absolute;
-        right: 50px;
-        top: 5%;
-        border: 2px solid pink;
-        border-radius: 20px;
-        display: none;
-        h2{
-            margin-bottom: 10px;
-        }
-    }
     .calendars{
+        height: 90%;
+        width: 55%;
+        font-family: "cachildren-kkum.otf";
+        border-radius: 20px 20px 0 0;
+        border: 2px solid pink;
+        text-align: center;
+        position: absolute;
+        top: 5%;
+        left: 1%;
         .talk{
             position: absolute;
             right: 5%;
@@ -291,17 +302,6 @@
             font-family: "cachildren-kkum.otf";
             font-size: 1rem;
         }
-    }
-    .calendars {
-        height: 90%;
-        width: 55%;
-        font-family: "cachildren-kkum.otf";
-        border-radius: 20px 20px 0 0;
-        border: 2px solid pink;
-        text-align: center;
-        position: absolute;
-        top: 5%;
-        left: 1%;
     }
 }
 /* ===================media 480px========================= */
