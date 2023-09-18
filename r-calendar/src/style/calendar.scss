@@ -91,6 +91,20 @@
             text-align: left;
             padding: 5px 10px;
             margin-bottom: 7px;
+            .box{
+                margin-right: 10px;
+                text-decoration: line-through;
+            }
+            button{
+                padding: 6px;
+            background: none;
+            border: 1px solid pink;
+            border-radius: 20px;
+            margin-left: 20px;
+            font-family: "cachildren-kkum.otf";
+            font-size: 1rem;
+            background-color: rgb(253, 212, 219);
+            }
         }
     }
     form{

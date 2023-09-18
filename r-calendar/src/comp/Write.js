@@ -3,6 +3,36 @@ import axios from 'axios';
 import {motion} from 'framer-motion'
 import '../style/calendar.scss';
 function Write({wrcal}) {
+    const [mdata,msetData] = useState('');
+    let [mcode,msetCode] = useState();
+    const [mode,setMode] = useState(true);
+    const modi =(code)=>{
+        msetCode(code)
+        setMode(false);
+    let data = data.filter(obj=>obj.date == code)
+    msetData(data[0].todo)
+    }
+
+    const del = (code)=>{
+        let deldata = data.filter(obj=>obj.date !==code)
+        setData(del)
+    }
+
+    const todoState = (e)=>{
+        let stateCode = e.target.checked
+        let dataCode = e. target.dataset.code
+        let datafind = data.map((obj)=>{
+            if(obj.date == dataCode){
+                obj.state = stateCode;
+            }
+            return obj;
+        })
+        setData(datafind)
+    }
+
+
+
+
     const lipop = {
         init:{scale:1, opacity:0},
         play:{scale:1, opacity:1,
@@ -36,12 +66,14 @@ function Write({wrcal}) {
                 initial= "init"
                 animate="play" >
         <article className='write' ref={wrcal}>
-                    <h2> 나의 일정 </h2>
+                    <h2> 나의 일정은 {data.length} 개 야~</h2>
                 <ul className='msg'>
                     {
                         data.map((item)=>(
                             <li key={item.id}>
-                                {item.msg}
+                                <input type='checkbox'className='box' data-code={item.date} />{item.msg}
+                                <button onClick={()=>{modi(item.code)}}disabled={item.state? true:false}>수정</button>
+                                <button>삭제</button>
                             </li>
                                 
                         ))

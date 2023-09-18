@@ -15,18 +15,7 @@ function Calendar1() {
         console.log( e.getMonth()+1  + '월' + e.getDate() + '일');
         wrcal.current.classList.add('active');
     }
-    const talk = function(e){
-        e.preventDefault();
-        talk.classList.toggle('on');
-    }
-    /* const talk = document.getElementById("chat");
-        if (talk) {
-        // 'classList'를 안전하게 접근합니다.
-        talk.current.classList.add("on");
-        } */
-    /* const talk = function(e){
-        chat.classList.add('on');
-    } */
+    
     /* 년월일을 id로 내용을 msg json 생성해주기 */
     return (
         <article className='T-calendar'>
@@ -36,8 +25,6 @@ function Calendar1() {
             <img src={background} alt='' className='back'/>
         </article>
         <article className='calendars'>
-            <span className='talk' onClick={talk}> talk </span>
-            
             <Calendar onClickDay={list} onChange={onChange}
                 calendarType="US" /* 일 부터 시작 */
                 formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
