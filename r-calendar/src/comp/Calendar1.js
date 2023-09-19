@@ -1,18 +1,14 @@
 import React, { useRef, useState } from 'react';
-import '../style/calendar.scss'; // css import
-/* import 'react-calendar/dist/Calendar.css'; */
+import '../style/calendar.scss'; 
 import Calendar from 'react-calendar';
 import Write from './Write';
-import Kwrite from './Kwrite';
 import background from '../background.jpg';
 
 function Calendar1() {
     const [value, onChange] = useState();
-    const wrcal =useRef();
-    const chat = useRef([]);
+    const wrcal = useRef();
     const list = function(e){
-        // e.preventDefault();
-        console.log( e.getMonth()+1  + '월' + e.getDate() + '일');
+        
         wrcal.current.classList.add('active');
     }
     
@@ -21,7 +17,6 @@ function Calendar1() {
         <article className='T-calendar'>
         <article className='Wr'>
             <Write wrcal={wrcal}/>
-            <Kwrite chat={chat}/>
             <img src={background} alt='' className='back'/>
         </article>
         <article className='calendars'>
@@ -29,10 +24,38 @@ function Calendar1() {
                 calendarType="US" /* 일 부터 시작 */
                 formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
                     new Date(date).toLocaleDateString("en-us", {day: "2-digit",})} 
-                value={value} 
+                // value={['2023-09-06','2023-09-18']}
+                tileContent={({ activeStartDate, date, view }) => {
+                    const sYear = date.getFullYear(),
+                          sMonth = date.getMonth()+1,
+                          sDate = date.getDate();
+
+// console.log(sYear, sMonth);
+                    let createDate,nYear,nMonth,nDate,role,msg=null;
+                   
+                    let sca = [
+                        {"todo":"홍길동","state":true,"date":'2023-09-02'},{"todo":"홍홍홍","state":false,"date":1695109323325}
+                    ];
+                    sca.forEach(obj=>{
+                        createDate = new Date(obj.date);
+                        nYear = createDate.getFullYear();
+                        nMonth = createDate.getMonth()+1;
+                        nDate = createDate.getDate();
+
+                        role = (view === 'month' && sDate === nDate && sMonth === nMonth && sYear === nYear);
+                        if(role){                            
+                            msg = obj.todo;
+                        }
+                    })
+                    
+
+                    return msg;
+                }}
                 />
         </article>
         </article>
+
+        
     );
 }
 export default Calendar1

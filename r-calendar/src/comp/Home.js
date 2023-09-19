@@ -1,6 +1,5 @@
 import React from 'react'
 import '../style/calendar.scss'; 
-import Calendar from 'react-calendar';
 import background from '../background.jpg';
 import { Link } from 'react-router-dom';
 function Home() {
