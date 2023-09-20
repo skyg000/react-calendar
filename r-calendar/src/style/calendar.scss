@@ -64,8 +64,31 @@
                 background-color: rgb(253, 212, 219)
             }
         } */
-    
-    
+    .home{
+        max-width: 1180px;
+        h1{
+            top: 15%;
+            left: 43%;
+        }
+        .login{
+            bottom: 28%;
+            left: 33%;
+        }
+        .back{
+            width: 100%;
+            background-color: rgb(246, 250, 215);
+        }
+    }
+    main{
+        .T-calendar{
+            .Wr{
+                .back{
+                    width: 100%;
+                    background-color: rgb(246, 250, 215);
+                }
+            }
+        }
+    }
     /* Write */
     .write{
         width: 400px;
@@ -95,6 +118,10 @@
                 margin-right: 10px;
                 text-decoration: line-through;
             }
+            code{
+                font-family: "cachildren-kkum.otf";
+                font-size: 1rem;
+            }
             button{
                 padding: 6px;
             background: none;
@@ -105,7 +132,14 @@
             font-size: 1rem;
             background-color: rgb(253, 212, 219);
             }
+            &.active{
+                code{
+                    text-decoration: line-through;
+                    color: crimson;
+                }
+            }
         }
+
     }
     form{
         display: flex;
@@ -321,6 +355,22 @@
 }
 /* ===================media 480px========================= */
 @media  (max-width:480px)  {
+    .home{
+        max-width: 1180px;
+        h1{
+            top: 15%;
+            left: 30%;
+        }
+        .login{
+            padding: 20px 10px;
+            bottom: 28%;
+            left: 10%;
+        }
+        .back{
+            width: 100%;
+            background-color: rgb(246, 250, 215);
+        }
+    }
     .chat{
         width: 400px;
         padding: 10px;
