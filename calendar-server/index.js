@@ -36,9 +36,29 @@ app.get('/abc/:id', function (req, res) {
 })
 
 app.post('/insert', function (req, res) { 
-    fs.writeFileSync('./data.json',JSON.stringify(req.body))
-    res.send('완료');
+    let jsonD = JSON.parse(fs.readFileSync('./data.json'))
+    fs.writeFileSync('./data.json',JSON.stringify([...jsonD,{...req.body}]))
+    let newjson = JSON.parse(fs.readFileSync('./data.json'))
+    res.send(newjson);
 })
+
+app.post('/del', function (req, res) { 
+    fs.writeFileSync('./data.json',JSON.stringify(req.body))
+    let newjson = JSON.parse(fs.readFileSync('./data.json'))
+    res.send(newjson);
+})
+
+
+app.post('/modi', function (req, res) {
+    const {todo, id} = req.body;
+    console.log(id);
+    let allData = JSON.parse(fs.readFileSync('./data.json'));
+    let thisData = allData.filter(n=>n.id === Number(id) )
+    thisData[0].todo = todo;
+    fs.writeFileSync('./data.json',JSON.stringify(allData))
+    res.send(allData);
+})
+
 /* chat.json */
 app.get('/abcd', function (req, res) { 
     const jsonD = fs.readFileSync('./chat.json')
