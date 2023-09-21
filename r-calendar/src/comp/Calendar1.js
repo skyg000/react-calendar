@@ -5,31 +5,47 @@ import Write from './Write';
 
 function Calendar1() {
     const [value, onChange] = useState();
+    let today = new Date();
+    let tyear = today.getFullYear();
+    let tmonth = today.getMonth()+1;
+    let tday = today.getDate();
+
+    const [date, setDate] = useState(`${tyear}.${tmonth}.${tday}`);
     const wrcal = useRef();
+    const calendars = useRef();
+
     const list = function(e){
-        
-            wrcal.current.classList.toggle('active');
-        
-        console.log(wrcal)
+        let year = e.getFullYear();
+        let month = e.getMonth()+1;
+        let day = e.getDate();
+        console.log(date,`${year}.${month}.${day}`);
+        if(date ==`${year}.${month}.${day}`){
+            wrcal.current.classList.remove('active');
+            calendars.current.classList.remove('on');
+        } else {
+            setDate(`${year}.${month}.${day}`)
+            wrcal.current.classList.add('active');
+            calendars.current.classList.add('on');
+        }
     }
+
     useEffect(() => {
         // wrcal.current = document.querySelector('.T-calendar');
     }, []);
-    
     /* 년월일을 id로 내용을 msg json 생성해주기 */
     return (
         <article className='T-calendar'>
         <article className='Wr'>
-            <Write wrcal={wrcal}/>
+            <Write wrcal={wrcal} date={date} calendars={calendars}/>
             <article className='back'></article>
         </article>
-        <article className='calendars'>
+        <article className='calendars' ref={calendars}>
             <Calendar onClickDay={list} onChange={onChange}
                 calendarType="US" /* 일 부터 시작 */
                 formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
                     new Date(date).toLocaleDateString("en-us", {day: "2-digit",})} 
                 // value={['2023-09-06','2023-09-18']}
-                tileContent={({  date, view }) => {
+                /* tileContent={({  date, view }) => {
                     const sYear = date.getFullYear(),
                             sMonth = date.getMonth()+1,
                             sDate = date.getDate();
@@ -48,11 +64,11 @@ function Calendar1() {
                         }
                     })
                     return msg;
-                }}
+                }} */
                 />
-        </article>
-        </article>
-    );
-    
+            </article>
+            </article>
+        );
+        
 }
 export default Calendar1

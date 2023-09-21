@@ -1,0 +1,374 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "cachildren-kkum.otf";
+  src: url("../font/cachildren-kkum.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ===================media 1180px============= */
+@media (max-width: 1180px) {
+  /*  .chat{
+       width: 400px;
+       padding: 10px;
+       position: absolute;
+       right: 50px;
+       top: 30%;
+       border: 2px solid pink;
+       border-radius: 20px;
+       display: none;
+       h2{
+           margin-bottom: 10px;
+       }
+   }
+   .chat.on{
+       display: flex;
+   }
+   .msg1{
+       padding-left: 0;
+       font-family: "cachildren-kkum.otf";
+       height: 400px;
+           li{
+               font-size: 20px;
+               border: 1px solid pink;
+               border-radius: 20px;
+               text-align: left;
+               padding: 5px 10px;
+               margin-bottom: 7px;
+               font-family: "cachildren-kkum.otf";
+           }
+       }
+       form{
+           display: flex;
+           input{
+               margin-right: 15px;
+               background: none;
+               border: 1px solid pink;
+               border-radius: 20px;
+               padding: 5px 10px;
+               font-size: 1rem;
+               font-family: "cachildren-kkum.otf";
+           }
+           input:nth-child(1){
+               background-color: rgb(253, 212, 219)
+           }
+           button{
+               padding: 10px;
+               background: none;
+               border: 1px solid pink;
+               border-radius: 20px;
+               margin-left: 20px;
+               font-family: "cachildren-kkum.otf";
+               font-size: 1rem;
+               background-color: rgb(253, 212, 219)
+           }
+       } */
+  .home {
+    max-width: 1180px;
+  }
+  .home h1 {
+    font-family: "cachildren-kkum.otf";
+    font-weight: 700;
+    top: 15%;
+    left: 41%;
+  }
+  .home p {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    font-size: 2rem;
+  }
+  .home .login {
+    bottom: 28%;
+    left: 33%;
+  }
+  .home .back {
+    width: 100%;
+    background-color: rgb(246, 250, 215);
+  }
+  main .T-calendar .Wr .back {
+    width: 100%;
+    background-color: rgb(246, 250, 215);
+  }
+  /* Write */
+  .write {
+    width: 35%;
+    padding: 10px;
+    position: absolute;
+    right: 35px;
+    top: 5%;
+    border: 2px solid pink;
+    border-radius: 20px;
+    display: none;
+  }
+  .write .msg {
+    margin: 0;
+  }
+  form input {
+    padding: 10px;
+    background-color: rgb(253, 212, 219);
+    border: 1px solid pink;
+    border-radius: 20px;
+    margin: 20px;
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+  }
+  form .close {
+    padding: 10px;
+    background-color: rgb(253, 212, 219);
+    border: 1px solid pink;
+    border-radius: 20px;
+    margin: 20px 0;
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+  }
+  .write.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .msg {
+    padding-left: 0;
+  }
+  .msg li {
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+    border: 1px solid pink;
+    border-radius: 20px;
+    text-align: left;
+    padding: 5px 10px;
+    margin-bottom: 7px;
+  }
+  .msg li .box {
+    margin-right: 10px;
+    text-decoration: line-through;
+  }
+  .msg li code {
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+  }
+  .msg li button {
+    padding: 6px;
+    background: none;
+    border: 1px solid pink;
+    border-radius: 20px;
+    margin-left: 20px;
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+    background-color: rgb(253, 212, 219);
+  }
+  .msg li.active code {
+    text-decoration: line-through;
+    color: crimson;
+  }
+  form {
+    display: flex;
+  }
+  form input {
+    margin-right: 15px;
+    background-color: rgb(253, 212, 219);
+    border: 1px solid pink;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+  }
+  form input:nth-child(1) {
+    margin: 20px 0;
+    background-color: rgb(253, 212, 219);
+  }
+  form button {
+    padding: 10px;
+    background: none;
+    border: 1px solid pink;
+    border-radius: 20px;
+    margin-left: 20px;
+    font-family: "cachildren-kkum.otf";
+    font-size: 1rem;
+    background-color: rgb(253, 212, 219);
+  }
+  .todo {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: pink;
+  }
+  .chat {
+    width: 400px;
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    top: 5%;
+    border: 2px solid pink;
+    border-radius: 20px;
+    display: none;
+  }
+  .chat h2 {
+    margin-bottom: 10px;
+  }
+  /* 전체 */
+  .calendars {
+    height: 90%;
+    width: 98%;
+    font-family: "cachildren-kkum.otf";
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid pink;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 1%;
+    /* .talk{
+        position: absolute;
+        right: 5%;
+        top: 2%;
+        border: 2px solid pink;
+        border-radius: 50%;
+        padding: 10px 10px;
+        font-family: "cachildren-kkum.otf"; 
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        cursor: pointer;
+    } */
+  }
+  .calendars.on {
+    width: 56%;
+  }
+  /* 상단 */
+  .react-calendar__navigation {
+    background: none;
+    margin-top: 20px;
+    border-bottom: 4px solid brown;
+    height: 60px;
+    border-radius: 20px 20px 0 0;
+  }
+  .react-calendar__navigation span {
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+  }
+  .react-calendar__navigation button {
+    background-color: pink;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.5rem;
+    padding: 0 8px;
+  }
+  .react-calendar__navigation button:not(:last-child) {
+    margin-right: 20px;
+  }
+  button.react-calendar__navigation__label {
+    padding: 2px 20px;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    background-color: pink;
+  }
+  /* 월 */
+  .react-calendar__month-view {
+    padding: 12px 32px;
+  }
+  .react-calendar__month-view abbr {
+    color: rgb(191, 112, 251);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  /* 요일 */
+  .react-calendar__month-view__weekdays {
+    margin-bottom: 20px;
+  }
+  .react-calendar__month-view__weekdays abbr {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  /* 일 */
+  .react-calendar__tile {
+    background: none;
+    border: 1px;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  /*hover, focus, 선택됐을 시 */
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus,
+  .react-calendar__tile--active {
+    background: rgb(221, 223, 221);
+    border-radius: 14px;
+  }
+  /* 현재 날짜  */
+  .react-calendar__tile--now {
+    background: pink;
+    border-radius: 14px;
+  }
+  /*hover, focus 시 */
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    /*  background: blue; */
+    border-radius: 14px;
+  }
+}
+/* ===================media 480px========================= */
+@media (max-width: 480px) {
+  .home {
+    max-width: 1180px;
+  }
+  .home h1 {
+    top: 15%;
+    left: 30%;
+  }
+  .home .login {
+    padding: 20px 10px;
+    bottom: 28%;
+    left: 10%;
+  }
+  .home .back {
+    width: 100%;
+    background-color: rgb(246, 250, 215);
+  }
+  .chat {
+    width: 400px;
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    top: 30%;
+    border: 2px solid pink;
+    border-radius: 20px;
+    display: none;
+  }
+  .chat h2 {
+    margin-bottom: 10px;
+  }
+  .calendars {
+    width: 90%;
+    height: 53%;
+    font-family: "cachildren-kkum.otf";
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid pink;
+    text-align: center;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+  }
+  .write {
+    width: 90%;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    border: 2px solid pink;
+    border-radius: 20px;
+    display: none;
+  }
+  .write .msg {
+    margin: 0;
+  }
+  form button {
+    padding: 8px;
+    background: none;
+    border: 1px solid pink;
+    border-radius: 20px;
+    /* margin-left: 20px; */
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=calendar.css.map */
