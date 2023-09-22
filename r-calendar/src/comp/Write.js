@@ -67,6 +67,7 @@ function Write({ wrcal,date,calendars }) {
                 let datafilter = res.data.filter(n=> n.date === date)
                 isetData(datafilter)
                 setState(false)
+                msetData('')
                 e.target.todo.id=''
             })
 

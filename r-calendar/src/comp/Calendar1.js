@@ -2,7 +2,7 @@ import React, { useRef, useState,useEffect } from 'react';
 import '../style/calendar.scss'; 
 import Calendar from 'react-calendar';
 import Write from './Write';
-
+import nosc from '../imges/nosc2.png'
 function Calendar1() {
     const [value, onChange] = useState();
     let today = new Date();
@@ -66,6 +66,10 @@ function Calendar1() {
                     return msg;
                 }} */
                 />
+            <article className='no-sc'>
+                <img src={nosc}></img>
+                <p> 날짜를 선택하여 일정을 추가해 보세요~ </p>
+            </article>
             </article>
             </article>
         );
