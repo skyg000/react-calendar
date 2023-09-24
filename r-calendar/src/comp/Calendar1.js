@@ -45,13 +45,13 @@ function Calendar1() {
                 formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
                     new Date(date).toLocaleDateString("en-us", {day: "2-digit",})} 
                 // value={['2023-09-06','2023-09-18']}
-                /* tileContent={({  date, view }) => {
+                tileContent={({  date, view }) => {
                     const sYear = date.getFullYear(),
                             sMonth = date.getMonth()+1,
                             sDate = date.getDate();
                     let createDate,nYear,nMonth,nDate,role,msg=null;
                     let sca = [
-                        {"todo":"홍길동","state":true,"date":'2023-09-02'},{"todo":"홍홍홍","state":false,"date":1695109323325}
+                        {}
                     ];
                     sca.forEach(obj=>{
                         createDate = new Date(obj.date);
@@ -64,7 +64,7 @@ function Calendar1() {
                         }
                     })
                     return msg;
-                }} */
+                }}
                 />
             <article className='no-sc'>
                 <img src={nosc}></img>

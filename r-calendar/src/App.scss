@@ -3,7 +3,7 @@ a,abbr,.msg,.msg1{
   list-style: none;
   text-decoration: none;
 }
-h1,h2,h3,p,a,span,ul,abbr,div,button{
+h1,h2,h3,p,a,span,ul,li,abbr,div,button,input,code{
   font-family: "cachildren-kkum.otf";
   color: white;
   margin: 0;
@@ -23,8 +23,11 @@ header{
 main{
   text-align: center;
   position: relative;
+  width: 100%;
+  background: linear-gradient(360deg, rgba(241,140,226,1) 0%,
+                      rgba(111,80,172,1) 46%,
+                      rgba(28,42,71,1) 100%);
   h1{
-    font-family: "cachildren-kkum.otf"; 
     font-size: 60px;
     position: absolute;
     top: 20%;

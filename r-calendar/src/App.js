@@ -1,4 +1,4 @@
-
+import './style/calendar.scss'; 
 import './App.scss';
 import Home from './comp/Home';
 import Calendar1 from './comp/Calendar1'
