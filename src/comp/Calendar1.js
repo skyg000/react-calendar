@@ -13,7 +13,7 @@ function Calendar1() {
     const [date, setDate] = useState(`${tyear}.${tmonth}.${tday}`);
     const wrcal = useRef();
     const calendars = useRef();
-
+    const nosc1 =useRef();
     const list = function (e) {
         let year = e.getFullYear();
         let month = e.getMonth() + 1;
@@ -22,10 +22,12 @@ function Calendar1() {
         if (date == `${year}.${month}.${day}`) {
             wrcal.current.classList.remove('active');
             calendars.current.classList.remove('on');
+            nosc1.current.classList.remove('on');
         } else {
             setDate(`${year}.${month}.${day}`)
             wrcal.current.classList.add('active');
             calendars.current.classList.add('on');
+            nosc1.current.classList.add('on');
         }
     }
 
@@ -63,13 +65,13 @@ function Calendar1() {
                         return msg;
                     }}
                 />
-                <article className='no-sc'>
+            </article>
+                <article className='no-sc' ref={nosc1}>
                     <img src={nosc}></img>
                     <p> 날짜를 선택하여 일정을 추가해 보세요~ </p>
                 </article>
-            </article>
             <article className='Wr'>
-                <Write wrcal={wrcal} date={date} calendars={calendars} />
+                <Write wrcal={wrcal} date={date} calendars={calendars} nosc={nosc1}/>
                 <article className='back'></article>
             </article>
         </article>

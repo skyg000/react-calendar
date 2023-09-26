@@ -5,111 +5,21 @@
   font-weight: normal;
   font-style: normal;
 }
-/* 상단 */
-.react-calendar__navigation {
-  background: none;
-  margin: 0 auto 10px;
-  border-bottom: 2px solid pink;
-  border-radius: 20px 20px 0 0;
-}
-.react-calendar__navigation span {
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-.react-calendar__navigation button {
-  border: none;
-  background-color: rgb(33, 44, 77);
-  border-radius: 20px 20px 0 0;
-  font-size: 2rem;
-  padding: 0 8px;
-}
-.react-calendar__navigation button:not(:last-child) {
-  margin-right: 20px;
-}
-
-button.react-calendar__navigation__label {
-  padding: 2px 20px;
-}
-
-/* 월 */
-.react-calendar__month-view {
-  padding: 5px 32px;
-}
-.react-calendar__month-view abbr {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-/* 요일 */
-.react-calendar__month-view__weekdays {
-  margin-bottom: 5px;
-}
-.react-calendar__month-view__weekdays abbr {
-  font-size: 2.3rem;
-  font-weight: 500;
-}
-
-/* 일 */
-.react-calendar__tile {
-  margin-bottom: 5px;
-  background: none;
-  border: 1px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-/*hover, focus, 선택됐을 시 */
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus,
-.react-calendar__tile--active {
-  background: rgb(9, 10, 9);
-  border-radius: 14px;
-}
-
-/* 현재 날짜  */
-.react-calendar__tile--now {
-  background: pink;
-  border-radius: 14px;
-}
-
-/*hover, focus 시 */
-.react-calendar__tile--now:enabled:hover,
-.react-calendar__tile--now:enabled:focus {
-  /*  background: blue; */
-  border-radius: 14px;
-}
-
-/* ===================media 1180px============= */
-@media (max-width: 1180px) {
+/* ===================media 1920px============= */
+@media (max-width: 1920px) {
   .home {
     max-width: 1180px;
-    height: 100%;
-  }
-  .home h1 {
-    font-weight: 700;
-    top: 15%;
-    left: 41%;
-  }
-  .home p {
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    font-size: 2rem;
-  }
-  .home .login {
-    bottom: 28%;
-    left: 33%;
   }
   .home .back {
     width: 100%;
     background: linear-gradient(360deg, rgb(241, 140, 226) 0%, rgb(111, 80, 172) 46%, rgb(28, 42, 71) 100%);
   }
   main .T-calendar {
-    height: 100%;
+    /*  height: 100%; */
+  }
+  main .T-calendar .Wr {
+    width: 97%;
+    margin: 0 auto;
   }
   main .T-calendar .Wr .back {
     width: 100%;
@@ -117,11 +27,8 @@ button.react-calendar__navigation__label {
   }
   /* Write */
   .write {
-    width: 95%;
     padding: 10px;
-    left: 10px;
-    top: 45%;
-    position: absolute;
+    position: relative;
     border: 2px solid pink;
     border-radius: 20px;
     display: none;
@@ -152,7 +59,6 @@ button.react-calendar__navigation__label {
   .write.active {
     display: flex;
     flex-direction: column;
-    position: fixed;
   }
   .msg {
     padding-left: 0;
@@ -233,14 +139,13 @@ button.react-calendar__navigation__label {
   }
   /* 전체 */
   .calendars {
-    width: 95%;
+    width: 97%;
     font-family: "cachildren-kkum.otf";
     border-radius: 20px 20px 20px 20px;
     border: 2px solid pink;
     text-align: center;
-    position: absolute;
-    top: 1%;
-    left: 1%;
+    position: relative;
+    margin: 0 auto 20px auto;
   }
   .calendars.on {
     width: 97%;
@@ -260,6 +165,7 @@ button.react-calendar__navigation__label {
   }
   .calendars.on .react-calendar__navigation button {
     font-size: 1.5rem;
+    margin-bottom: 10px;
     padding: 0 8px;
   }
   .calendars.on .react-calendar__navigation button:not(:last-child) {
@@ -291,13 +197,8 @@ button.react-calendar__navigation__label {
     /*  background: blue; */
     border-radius: 14px;
   }
-  .calendars.on .no-sc {
-    display: none;
-  }
   .no-sc {
-    position: absolute;
-    top: 110%;
-    left: 30%;
+    position: relative;
   }
   .no-sc img {
     width: 100px;
@@ -305,38 +206,20 @@ button.react-calendar__navigation__label {
   .no-sc p {
     font-size: 2rem;
   }
+  .no-sc.on {
+    display: none;
+  }
 }
 /* ===================media 780px============= */
 @media (max-width: 780px) {
-  .home h1 {
-    left: 30%;
-  }
-  .home p {
-    left: 29%;
-  }
   .home .login {
-    left: 20%;
-  }
-  .write.active {
-    width: 93%;
-  }
-  .no-sc {
     left: 20%;
   }
 }
 /* ===================media 480px========================= */
 @media (max-width: 480px) {
-  .home h1 {
-    top: 15%;
-    left: 17%;
-  }
-  .home p {
-    left: 17%;
-  }
   .home .login {
-    padding: 20px 10px;
-    bottom: 28%;
-    left: 10%;
+    padding: 20px 100px;
   }
   .home .back {
     background: linear-gradient(360deg, rgb(241, 140, 226) 0%, rgb(111, 80, 172) 46%, rgb(28, 42, 71) 100%);
@@ -348,19 +231,15 @@ button.react-calendar__navigation__label {
   /* 달력  */
   .calendars {
     width: 97%;
-    top: 1%;
-    left: 1%;
     /* event */
     /* event 종료 */
     /* 안내문구 */
   }
   .calendars.on {
     width: 97%;
-    position: fixed;
     /* 상단 */
     /* 월 */
     /* 요일 */
-    /* 일 */
   }
   .calendars.on .react-calendar__navigation {
     margin: 10px auto;
@@ -440,16 +319,10 @@ button.react-calendar__navigation__label {
   }
   /* write */
   .write {
-    width: 90%;
     padding: 10px;
-    left: 6px;
-    top: 45%;
   }
   .write .msg {
     margin: 0;
-  }
-  .write.active {
-    width: 90%;
   }
   form button {
     padding: 8px;
@@ -462,33 +335,23 @@ button.react-calendar__navigation__label {
 }
 /* ===================media 380px========================= */
 @media (max-width: 380px) {
-  .home h1 {
-    top: 15%;
-    left: 17%;
-  }
-  .home p {
-    left: 17%;
-  }
   .home .login {
-    padding: 20px 10px;
+    padding: 20px 90px;
     bottom: 28%;
     left: 5%;
   }
   /* 달력  */
   .calendars {
     width: 97%;
-    top: 1%;
-    left: 1%;
     /* event */
     /* event 종료 */
     /* 안내문구 */
   }
   .calendars.on {
-    width: 96%;
+    width: 97%;
     /* 상단 */
     /* 월 */
     /* 요일 */
-    /* 일 */
   }
   .calendars.on .react-calendar__navigation {
     margin: 0px auto 5px;
@@ -554,16 +417,10 @@ button.react-calendar__navigation__label {
   }
   /* write */
   .write {
-    width: 91%;
     padding: 10px;
-    left: 5px;
-    top: 45%;
   }
   .write .msg {
     margin: 0;
-  }
-  .write.active {
-    width: 90%;
   }
   form input {
     margin-right: 10px;

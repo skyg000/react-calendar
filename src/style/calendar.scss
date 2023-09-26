@@ -4,102 +4,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
-/* 상단 */
-.react-calendar__navigation {
-    background: none;
-    margin: 0 auto 10px;
-    border-bottom: 2px solid pink;
-    border-radius: 20px 20px 0 0;
-    span {
-        font-size: 1.7rem;
-        font-weight: 600;
-        }
-    }
-    .react-calendar__navigation button {
-        border:none;
-        background-color:rgb(33 44 77);
-        border-radius: 20px 20px 0 0;
-        font-size: 2rem;
-        padding: 0 8px;
-        &:not(:last-child) {
-            margin-right: 20px;
 
-        }
-    }
-    button.react-calendar__navigation__label {
-        padding: 2px 20px;
-    }
-   
-    
-/* 월 */
-    .react-calendar__month-view {
-        padding: 5px 32px;
-        abbr {
-          // 텍스트
-            font-size: 1.5rem;
-            font-weight: 500;
-            }
-        }
-/* 요일 */
-    .react-calendar__month-view__weekdays {
-        margin-bottom: 5px;
-        abbr {
-            // 텍스트 부분
-            font-size: 2.3rem;
-            font-weight: 500;
-            }
-        }
-/* 일 */
-    .react-calendar__tile {
-        margin-bottom: 5px;
-        background: none;
-        border:1px ;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    /*hover, focus, 선택됐을 시 */
-    .react-calendar__tile:enabled:hover,
-    .react-calendar__tile:enabled:focus,
-    .react-calendar__tile--active {
-        background: rgb(9, 10, 9);
-        border-radius: 14px;
-    }
-    
-/* 현재 날짜  */
-    .react-calendar__tile--now {
-        background:pink;
-        border-radius: 14px;
-        }
-        /*hover, focus 시 */
-        .react-calendar__tile--now:enabled:hover,
-        .react-calendar__tile--now:enabled:focus {
-           /*  background: blue; */
-            border-radius: 14px;
-        }
-/* ===================media 1180px============= */
-@media  (max-width:1180px)  {
+/* ===================media 1920px============= */
+@media  (max-width:1920px)  {
     .home{
         max-width: 1180px;
-        height: 100%;
-        h1{
-            font-weight: 700;
-            top: 15%;
-            left: 41%;
-        }
-        p{
-            position: absolute;
-            top: 30%;
-            left: 40%;
-            font-size: 2rem;
-        }
-        .login{
-            bottom: 28%;
-            left: 33%;
-        }
+        // height: 100%;
         .back{
             width: 100%;
             background: linear-gradient(360deg, rgba(241,140,226,1) 0%,
@@ -109,7 +19,7 @@
     }
     main{
         .T-calendar{
-            height: 100%;
+           /*  height: 100%; */
             .Wr{
                 width: 97%;
                 margin: 0 auto;
@@ -261,6 +171,7 @@
         }
         .react-calendar__navigation button {
             font-size: 1.5rem;
+            margin-bottom: 10px;
             padding: 0 8px;
             &:not(:last-child) {
                 margin-right: auto;
@@ -303,20 +214,19 @@
            /*  background: blue; */
             border-radius: 14px;
         }
-        .no-sc{
-            display: none;
-        }
-        }
     }
+    
+}
     .no-sc{
-        position: absolute;
-        top: 110%;
-        left: 30%;
+        position: relative;
         img{
             width: 100px;
         }
         p{
             font-size: 2rem;
+        }
+        &.on{
+            display: none;
         }
     }
     
@@ -324,35 +234,17 @@
 /* ===================media 780px============= */
 @media (max-width:780px){
     .home{
-            h1{
-                left: 30%;
-            }
-            p{
-                left: 29%;
-            }
             .login{
                 left: 20%;
             }   
-    }
-    .no-sc {
-        left: 20%;
     }
 }
 
 /* ===================media 480px========================= */
 @media  (max-width:480px)  {
     .home{
-        h1{
-            top: 15%;
-            left: 17%;
-        }
-        p{
-            left: 17%;
-        }
         .login{
-            padding: 20px 10px;
-            bottom: 28%;
-            left: 10%;
+            padding: 20px 100px;
         }
         .back{
             background: linear-gradient(360deg, rgba(241,140,226,1) 0%,
@@ -407,7 +299,6 @@
             font-weight: 500;
             }
         }
-/* 일 */
         .no-sc{
             display: none;
         }
@@ -483,9 +374,6 @@
             margin: 0;
         }
     }
-    .write.active {
-    }
-    
     form button {
         padding: 8px;
         background: none;
@@ -498,15 +386,8 @@
 /* ===================media 380px========================= */
 @media  (max-width:380px)  {
     .home{
-        h1{
-            top: 15%;
-            left: 17%;
-        }
-        p{
-            left: 17%;
-        }
         .login{
-            padding: 20px 10px;
+            padding: 20px 90px;
             bottom: 28%;
             left: 5%;
         }
@@ -539,7 +420,6 @@
             font-weight: 500;
             }
         }
-/* 일 */
         .no-sc{
             display: none;
         }
@@ -608,8 +488,6 @@
         .msg{
             margin: 0;
         }
-    }
-    .write.active{
     }
     form input{
         margin-right: 10px;
