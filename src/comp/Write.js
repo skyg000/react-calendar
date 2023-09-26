@@ -85,6 +85,7 @@ function Write({ wrcal,date,calendars }) {
             
         }
     }
+    
         useEffect(()=>{
             axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
