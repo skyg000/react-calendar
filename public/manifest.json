@@ -1,0 +1,31 @@
+{
+  "short_name": "나만의 일정 기록 어플",
+  "name": "My Todo",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/react-calendar/icons/apple-touch-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/react-calendar/icons/apple-touch-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/react-calendar/icons/favicon-196x196.png",
+      "type": "image/png",
+      "sizes": "196x196",
+      "purpose":"any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
