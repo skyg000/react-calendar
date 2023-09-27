@@ -22,12 +22,12 @@ function Calendar1() {
         if (date == `${year}.${month}.${day}`) {
             wrcal.current.classList.remove('active');
             calendars.current.classList.remove('on');
-            nosc1.current.classList.remove('on');
+            nosc1.current.classList.remove('on1');
         } else {
             setDate(`${year}.${month}.${day}`)
             wrcal.current.classList.add('active');
             calendars.current.classList.add('on');
-            nosc1.current.classList.add('on');
+            nosc1.current.classList.add('on1');
         }
     }
 
@@ -59,7 +59,7 @@ function Calendar1() {
                             nDate = createDate.getDate();
                             role = (view === 'month' && sDate === nDate && sMonth === nMonth && sYear === nYear);
                             if (role) {
-                                msg = obj.todo;
+                                <span>★</span>
                             }
                         })
                         return msg;

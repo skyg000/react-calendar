@@ -63,6 +63,9 @@
             margin: 20px 0;
             font-family: "cachildren-kkum.otf";
             font-size: 1rem;
+            &.no-sc{
+                display: flex;
+            }
         }
     }
     .write.active{
@@ -225,7 +228,7 @@
         p{
             font-size: 2rem;
         }
-        &.on{
+        &.on1{
             display: none;
         }
     }

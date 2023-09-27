@@ -56,6 +56,9 @@
     font-family: "cachildren-kkum.otf";
     font-size: 1rem;
   }
+  form .close.no-sc {
+    display: flex;
+  }
   .write.active {
     display: flex;
     flex-direction: column;
@@ -206,7 +209,7 @@
   .no-sc p {
     font-size: 2rem;
   }
-  .no-sc.on {
+  .no-sc.on1 {
     display: none;
   }
 }

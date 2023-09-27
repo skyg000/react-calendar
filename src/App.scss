@@ -1,26 +1,11 @@
 body{background-color: burlywood;}
 
-a,
-abbr,
-.msg,
-.msg1 {
+a,abbr,.msg,.msg1 {
   list-style: none;
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-p,
-a,
-span,
-ul,
-li,
-abbr,
-div,
-button,
-input,
-code {
+h1,h2,h3,p,a,span,ul,li,abbr,div,button,input,code {
   font-family: "cachildren-kkum.otf";
   color: white;
   margin: 0;
@@ -80,7 +65,7 @@ main {
 /* 상단 */
 .react-calendar__navigation {
   background: none;
-  margin: 0 auto 10px;
+  margin: 0 auto ;
   border-bottom: 2px solid pink;
   border-radius: 20px 20px 0 0;
   span {
@@ -94,9 +79,7 @@ main {
       border-radius: 20px 20px 0 0;
       font-size: 2rem;
       padding: 0 8px;
-      &:not(:last-child) {
-          margin-right: 20px;
-      }
+      margin-bottom: 5px;
   }
   button.react-calendar__navigation__label {
       padding: 2px 20px;

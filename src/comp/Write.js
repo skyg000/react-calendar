@@ -7,7 +7,7 @@ import Calendar1 from './Calendar1';
 
 const initData = [];
 let todoArr = [];
-function Write({ wrcal,date,calendars }) {
+function Write({ wrcal,date,calendars,nosc1 }) {
     const [idata, isetData] = useState(initData)
     const [mdata, msetData] = useState('');
     let [mcode, msetCode] = useState();
@@ -53,9 +53,10 @@ function Write({ wrcal,date,calendars }) {
         }
     }
     
-    const pop = () => {
-        wrcal.current.classList.remove('active');
-        calendars.current.classList.remove('on');
+    const pop = (e) => {
+            wrcal.current.classList.remove('active');
+            calendars.current.classList.remove('on');
+            
     }
     /* 저장 */
     const insert = (e) => {
