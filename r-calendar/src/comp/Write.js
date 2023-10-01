@@ -39,12 +39,10 @@ function Write({ wrcal,date,calendars,nosc1 }) {
     
     /* 삭제 */
     const del = (code) => {
-        let deldata = idata.filter(item => item.id !== code)
-        axios.post(`${process.env.REACT_APP_SERVER}/del`,{deldata})
-        .then(res=>{
-            const newData = res.data
-            isetData(newData)
-        })
+            let deldata = idata.filter(obj => obj.id !== code)
+            axios.post(`${process.env.REACT_APP_SERVER}/del`,{deldata})
+            .then(res=>isetData(res.data))
+        
     }
     /* 애니메이션 */
     const lipop = {
