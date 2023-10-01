@@ -7,7 +7,7 @@ import Calendar1 from './Calendar1';
 
 const initData = [];
 let todoArr = [];
-function Write({ wrcal,date,calendars }) {
+function Write({ wrcal,date,calendars,nosc1 }) {
     const [idata, isetData] = useState(initData)
     const [mdata, msetData] = useState('');
     let [mcode, msetCode] = useState();
@@ -39,10 +39,12 @@ function Write({ wrcal,date,calendars }) {
     
     /* 삭제 */
     const del = (code) => {
-            let deldata = delData.filter(obj => obj.id !== code)
-            axios.post('http://localhost:3030/del',deldata)
-            .then(res=>isetData(res.data))
-        
+        let deldata = idata.filter(item => item.id !== code)
+        axios.post(`${process.env.REACT_APP_SERVER}/del`,{deldata})
+        .then(res=>{
+            const newData = res.data
+            isetData(newData)
+        })
     }
     /* 애니메이션 */
     const lipop = {
@@ -53,16 +55,17 @@ function Write({ wrcal,date,calendars }) {
         }
     }
     
-    const pop = () => {
-        wrcal.current.classList.remove('active');
-        calendars.current.classList.remove('on');
+    const pop = (e) => {
+            wrcal.current.classList.remove('active');
+            calendars.current.classList.remove('on');
+            
     }
     /* 저장 */
     const insert = (e) => {
         e.preventDefault();
         if(state === true){
             let newData = {"todo":e.target.todo.value,"id":e.target.todo.id}
-            axios.post('http://localhost:3030/modi',newData)
+            axios.post(`${process.env.REACT_APP_SERVER}/modi`,newData)
             .then(res=>{
                 let datafilter = res.data.filter(n=> n.date === date)
                 isetData(datafilter)
@@ -76,8 +79,8 @@ function Write({ wrcal,date,calendars }) {
             let a = new Date();
             let ab = a.getTime()
             let newData = {"todo":e.target.todo.value,"state":todostate,"date":date,"id":ab}
-        
-            axios.post('http://localhost:3030/insert',newData)
+            msetData('')
+            axios.post(`${process.env.REACT_APP_SERVER}/insert`,newData)
             .then(res=>{
                 let datafilter = res.data.filter(n=> n.date === date)
                 isetData(datafilter)
@@ -85,13 +88,14 @@ function Write({ wrcal,date,calendars }) {
             
         }
     }
+    
         useEffect(()=>{
-            axios.get('http://localhost:3030/abc')
+            axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
                 let datas = res.data.filter(n=> n.date === date);
                 isetData(datas)
             })
-            axios.get('http://localhost:3030/abc')
+            axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
                 setDeldata(res.data)
             })
@@ -106,7 +110,7 @@ function Write({ wrcal,date,calendars }) {
                     
                     <h2> 나의 일정은 {idata.length} 개 </h2>
                     <form onSubmit={insert}>
-                        <input type='text' name='todo' autocomplete="off" ref={thisinput} value={mdata} onChange={(e) => { msetData(e.target.value) }}  />
+                        <input type='text' name='todo' autoComplete="off" ref={thisinput} value={mdata} onChange={(e) => { msetData(e.target.value) }}  />
                         <input type='submit' value={`${state === false ? '입력' : '수정'}`} />
                         <button type="button" className='close' onClick={pop}> 닫기 </button>
                     </form>

@@ -1,62 +1,137 @@
+body{background-color: burlywood;}
 
-a,abbr,.msg,.msg1{
+a,abbr,.msg,.msg1 {
   list-style: none;
   text-decoration: none;
 }
-h1,h2,h3,p,a,span,ul,li,abbr,div,button,input,code{
+
+h1,h2,h3,p,a,span,ul,li,abbr,div,button,input,code {
   font-family: "cachildren-kkum.otf";
   color: white;
   margin: 0;
 }
+
 @font-face {
-	font-family: "cachildren-kkum.otf";
-	src: url("./font/cachildren-kkum.otf");
-	font-weight: normal;
-	font-style: normal;
+  font-family: "cachildren-kkum.otf";
+  src: url("./font/cachildren-kkum.otf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 
 
-header{
+header {
   width: 100%;
 }
-main{
+
+main {
   text-align: center;
   position: relative;
   width: 100%;
-  background: linear-gradient(360deg, rgba(241,140,226,1) 0%,
-                      rgba(111,80,172,1) 46%,
-                      rgba(28,42,71,1) 100%);
-  h1{
+  height: 100vh;
+  background: linear-gradient(360deg, rgba(241, 140, 226, 1) 0%,
+      rgba(111, 80, 172, 1) 46%,
+      rgba(28, 42, 71, 1) 100%);
+  padding-top: 10px;
+  max-width: 768px;
+  margin: 0 auto;
+  // top: 0;
+  // right: 100px;
+
+  h1 {
     font-size: 60px;
-    position: absolute;
-    top: 20%;
-    left: 47%;
+    position: relative;
+    margin-top: 250px;
   }
-  .back{
+  p{
+    margin: 50px auto 100px;
+    font-size: 2.5rem;
+  }
+  .back {
     width: 100%;
-    height: 100vh;
+  }
+
+  .login {
+    font-size: 32px;
+    width: 300px;
+    border: 1px solid pink;
+    border-radius: 30px;
+    padding: 20px 150px;
+    background-color: pink;
+    margin-top: 300px;
+    color: black;
+  }
+}
+/* 상단 */
+.react-calendar__navigation {
+  background: none;
+  margin: 0 auto ;
+  border-bottom: 2px solid pink;
+  border-radius: 20px 20px 0 0;
+  span {
+      font-size: 1.7rem;
+      font-weight: 600;
+      }
+  }
+  .react-calendar__navigation button {
+      border:none;
+      background-color:rgb(33 44 77);
+      border-radius: 20px 20px 0 0;
+      font-size: 2rem;
+      padding: 0 8px;
+      margin-bottom: 5px;
+  }
+  button.react-calendar__navigation__label {
+      padding: 2px 20px;
+  }
+ 
+  
+/* 월 */
+  .react-calendar__month-view {
+      padding: 5px 32px;
+      abbr {
+        // 텍스트
+          font-size: 1.5rem;
+          font-weight: 500;
+          }
+      }
+/* 요일 */
+  .react-calendar__month-view__weekdays {
+      margin-bottom: 5px;
+      abbr {
+          // 텍스트 부분
+          font-size: 2.3rem;
+          font-weight: 500;
+          }
+      }
+/* 일 */
+  .react-calendar__tile {
+      margin-bottom: 5px;
+      background: none;
+      border:1px ;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+  }
+
+  /*hover, focus, 선택됐을 시 */
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus,
+  .react-calendar__tile--active {
+      background: rgb(9, 10, 9);
+      border-radius: 14px;
   }
   
-    .login{
-      font-size: 32px;
-      width: 300px;
-      border: 1px solid pink;
-      border-radius: 30px;
-      padding: 20px 50px;
-      background-color: pink;
-      position: absolute;
-      bottom: 30%;
-      left: 40%;
-      color: black;
-    }
-  }
-  
-
-
-
-
-
-
-
-
+/* 현재 날짜  */
+  .react-calendar__tile--now {
+      background:pink;
+      border-radius: 14px;
+      }
+      /*hover, focus 시 */
+      .react-calendar__tile--now:enabled:hover,
+      .react-calendar__tile--now:enabled:focus {
+         /*  background: blue; */
+          border-radius: 14px;
+      }
