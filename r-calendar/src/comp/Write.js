@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
+import Diary from './Diary';
 import Item from './Item';
 import { motion } from 'framer-motion'
 import '../style/calendar.scss';
-import Calendar1 from './Calendar1';
 
 const initData = [];
-let todoArr = [];
 function Write({ wrcal,date,calendars,nosc1 }) {
     const [idata, isetData] = useState(initData)
     const [mdata, msetData] = useState('');
@@ -39,24 +38,23 @@ function Write({ wrcal,date,calendars,nosc1 }) {
     
     /* 삭제 */
     const del = (code) => {
-            let deldata = idata.filter(obj => obj.id !== code)
-            axios.post(`${process.env.REACT_APP_SERVER}/del`,{deldata})
-            .then(res=>isetData(res.data))
+            let deldata = idata.filter(item => item.id !== code)
+            axios.post(`${process.env.REACT_APP_SERVER}/del`,deldata)
+            .then(res=>{
+                isetData(res.data)        
+            })
         
     }
     /* 애니메이션 */
     const lipop = {
-        init: { scale: 1, opacity: 0 },
-        play: {
-            scale: 1, opacity: 1,
-            transition: { duration: 2, ease: 'circOut' },
+        init: { scale: 1, opacity: 0 , y:0},
+        play: {scale: 1, opacity: 1, y:20,transition: { duration: 2, ease: 'circOut' },
         }
     }
     
     const pop = (e) => {
             wrcal.current.classList.remove('active');
             calendars.current.classList.remove('on');
-            
     }
     /* 저장 */
     const insert = (e) => {
@@ -86,18 +84,18 @@ function Write({ wrcal,date,calendars,nosc1 }) {
             
         }
     }
-    
-        useEffect(()=>{
-            axios.get(`${process.env.REACT_APP_SERVER}/abc`)
-            .then(res => {
-                let datas = res.data.filter(n=> n.date === date);
-                isetData(datas)
-            })
-            axios.get(`${process.env.REACT_APP_SERVER}/abc`)
-            .then(res => {
-                setDeldata(res.data)
-            })
-        },[date])
+   
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
+        .then(res => {
+            let datas = res.data.filter(n=> n.date === date);
+            isetData(datas)
+        })
+        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
+        .then(res => {
+            setDeldata(res.data)
+        })
+    },[date])
 
         return (
             <motion.div
@@ -105,7 +103,6 @@ function Write({ wrcal,date,calendars,nosc1 }) {
                 initial="init"
                 animate="play" >
                 <article className='write' ref={wrcal}>
-                    
                     <h2> 나의 일정은 {idata.length} 개 </h2>
                     <form onSubmit={insert}>
                         <input type='text' name='todo' autoComplete="off" ref={thisinput} value={mdata} onChange={(e) => { msetData(e.target.value) }}  />
