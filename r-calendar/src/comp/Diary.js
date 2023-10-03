@@ -28,7 +28,6 @@ function Diary({ diary, diaryPop }) {
             code: Date.now(),
         }
         setData1([...data1, d])
-        dsetData('')
     }
     useEffect(() => {
         axios.get('http://localhost:3030/abcd')
@@ -36,15 +35,16 @@ function Diary({ diary, diaryPop }) {
                 console.log(res);
             }, [data1])
         axios.post('http://localhost:3030/insert1', { "diary": data1 })
+        
     })
 
     return (
         <motion.div variants={lipop} initial="init" animate="play" >
             <article className='diary' ref={diaryPop}>
                 <h2> 하루를 마무리해 보세요 </h2>
-                <form onSubmit={insert1}>
-                    <input type='text' name='diary' autoComplete="off" />
-                    <input type='submit' value={'입력하기'} />
+                <form onSubmit={insert1} >
+                    <input className='f-diary' type='text' name='diary' autoComplete="off"  />
+                    <input type='submit' value={'입력'} />
                     <button className='close' onClick={pop1}> 닫기 </button>
                 </form>
                 <ul className='msg1' >
