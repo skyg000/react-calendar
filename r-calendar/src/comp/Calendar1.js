@@ -11,9 +11,10 @@ function Calendar1() {
     let tyear = today.getFullYear();
     let tmonth = today.getMonth() + 1;
     let tday = today.getDate();
-    const diaryPop = useRef();
+
     const [events, setEvents] = useState([]);
     const [date, setDate] = useState(`${tyear}.${tmonth}.${tday}`);
+    const diaryPop = useRef(null);
     const wrcal = useRef();
     const calendars = useRef();
     const nosc1 = useRef();
@@ -21,7 +22,6 @@ function Calendar1() {
         let year = e.getFullYear();
         let month = e.getMonth() + 1;
         let day = e.getDate();
-        console.log(date, `${year}.${month}.${day}`);
         if (date == `${year}.${month}.${day}`) {
             wrcal.current.classList.remove('active');
             calendars.current.classList.remove('on');
@@ -35,7 +35,7 @@ function Calendar1() {
     }
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
+        axios.get('http://localhost:3030/abc')
             .then(res => {
                 setEvents(res.data); // 가져온 데이터를 상태에 설정
             })
@@ -43,26 +43,27 @@ function Calendar1() {
                 console.error('Error fetching data:', error);
             });
     }, [date]);
-    
-    const ldiary = function(e){
-        diaryPop.current.classList.add('active1')
+
+    const ldiary = function (e) {
+        diaryPop.current.classList.toggle('active1');
+        nosc1.current.classList.add('on1');
     }
     return (
         <article className='T-calendar'>
             <article className='calendars' ref={calendars}>
                 {/* 나가기 */}
                 <a href='./home' className='out'> 나가기 </a>
-                <span className='w-diary' diaryPop={diaryPop} onClick={ldiary}> 나의하루 </span>
+                <span className='w-diary' onClick={ldiary}> 나의하루 </span>
                 {/* 캘린더 옵션 */}
                 <Calendar onClickDay={list} onChange={onChange}
                     calendarType="US" /* 일 부터 시작 */
                     formatDay={(locale, date) =>  //xx일 -> xx 으로 format 변경
-                    new Date(date).toLocaleDateString("en-us", { day: "2-digit", })}
+                        new Date(date).toLocaleDateString("en-us", { day: "2-digit", })}
                     // value={['2023-09-06','2023-09-18']}
                     tileContent={({ date, view }) => {
                         const sYear = date.getFullYear(),
-                        sMonth = date.getMonth() + 1,
-                        sDate = date.getDate();
+                            sMonth = date.getMonth() + 1,
+                            sDate = date.getDate();
                         const event = events.find(event => {
                             const evenDate = new Date(event.date)
                             return (
@@ -70,24 +71,25 @@ function Calendar1() {
                                 evenDate.getFullYear() === sYear &&
                                 evenDate.getMonth() + 1 === sMonth &&
                                 evenDate.getDate() === sDate
-                                );
-                            })
-                            if (event) {
-                                return <span className='star'> ★ </span>
-                            }
-                            return null
-                        }}
+                            );
+                        })
+                        if (event) {
+                            return <span className='star'> ★ </span>
+                        }
+                        return null
+                    }}
                 />
             </article>
-             {/* 안내 */}           
+            {/* 안내 */}
             <article className='no-sc' ref={nosc1}>
-                <img src={nosc}></img>
-                <p> 날짜를 선택하여 일정을 추가해 보세요~ </p>
+                {/* <img src={nosc}></img> */}
+                <p> 날짜를 선택하여 일정을 추가해 보세요! </p>
+                <p> 나의 하루를 통해 하루를 마무리해 보세요! </p>
             </article>
-             {/* 글쓰기 */}           
+            {/* 글쓰기 */}
             <article className='Wr'>
                 <Write wrcal={wrcal} date={date} calendars={calendars} nosc={nosc1} />
-                <Diary diaryPop={diaryPop}/>
+                <Diary diaryPop={diaryPop} nosc={nosc1}/>
                 <article className='back'></article>
             </article>
         </article>

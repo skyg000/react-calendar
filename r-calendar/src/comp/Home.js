@@ -23,11 +23,11 @@ function Home() {
                 </article>
                 <p> 나의 하루를 정리해 보세요. </p>
                 <Link to="/calendar1" className='login'> 시작하기 </Link>
-                <KakaoLogin
+               {/*  <KakaoLogin
                     token={kakaoClientId}
                     onSuccess={kakaoOnSuccess}
                     onFail={kakaoOnFailure}
-                />
+                /> */}
                 <article className='back'></article>
         </article>
     )
