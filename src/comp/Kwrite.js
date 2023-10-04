@@ -1,7 +1,7 @@
 import React, { useState, } from 'react'
 import {motion} from 'framer-motion'
 import axios from 'axios';
-function Kwrite({chat}) {
+function Diary({chat}) {
 /* animation */    
     const lipop = {
         init:{scale:1,x:1000, opacity:0},
@@ -55,4 +55,4 @@ function Kwrite({chat}) {
     )
 }
 
-export default Kwrite
+export default Diary
