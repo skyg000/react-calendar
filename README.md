@@ -1,5 +1,4 @@
-# Getting Started with Create React App
-
+# 개인 일정 관리 앱
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
