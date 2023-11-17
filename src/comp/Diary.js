@@ -22,21 +22,17 @@ function Diary({ diary, diaryPop }) {
     const [data1, setData1] = useState([]);
     let insert1 = (e) => {
         e.preventDefault();
-        let a = e.target;
-        let d = {
-            msg: a.diary.value,
-            code: Date.now(),
-        }
-        setData1([...data1, d])
+        let diaryData ={"diary":e.target.diary.value,"date":Date.now()} ;
+        axios.post(`${process.env.REACT_APP_SERVER}/insert1`, diaryData)
+        setData1(data1)
+        console.log(diaryData);
     }
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER}/abcd`)
-            .then(res => {
-                console.log(res);
+        .then(res => {
+            /* setData1(Array.isArray(res.data) ? res.data : []); */
+        })
             }, [data1])
-        axios.post(`${process.env.REACT_APP_SERVER}/insert1`, { "diary": data1 })
-        
-    })
 
     return (
         <motion.div variants={lipop} initial="init" animate="play" >
