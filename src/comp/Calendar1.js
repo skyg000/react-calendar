@@ -4,7 +4,6 @@ import Calendar from 'react-calendar';
 import Write from './Write';
 import axios from 'axios';
 import Diary from './Diary';
-import nosc from '../imges/nosc2.png'
 function Calendar1() {
     const [value, onChange] = useState();
     let today = new Date();
@@ -35,7 +34,7 @@ function Calendar1() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3030/abc')
+        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
                 setEvents(res.data); // 가져온 데이터를 상태에 설정
             })

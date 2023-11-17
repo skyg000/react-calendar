@@ -28,7 +28,7 @@ function Diary({chat}) {
     .then(res=>{
         console.log(res);
     })
-    axios.post('http://localhost:3030/insert1',{"chat":data1})
+    axios.post('http://localhost:3030/insert1',{"diary":data1})
     return (
         <article className='chat'>
             <motion.div

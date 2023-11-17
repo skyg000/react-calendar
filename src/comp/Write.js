@@ -39,7 +39,7 @@ function Write({ wrcal, date, calendars, nosc1 }) {
     /* 삭제 */
     const del = (code) => {
         let deldata = idata.filter(item => item.id !== code)
-        axios.post('http://localhost:3030/del', deldata)
+        axios.post(`${process.env.REACT_APP_SERVER}/del`, deldata)
             .then(res => {
                 isetData(res.data)
             })
@@ -62,7 +62,7 @@ function Write({ wrcal, date, calendars, nosc1 }) {
         e.preventDefault();
         if (state === true) {
             let newData = { "todo": e.target.todo.value, "id": e.target.todo.id }
-            axios.post('http://localhost:3030/modi', newData)
+            axios.post(`${process.env.REACT_APP_SERVER}/modi`, newData)
                 .then(res => {
                     let datafilter = res.data.filter(n => n.date === date)
                     isetData(datafilter)
@@ -77,7 +77,7 @@ function Write({ wrcal, date, calendars, nosc1 }) {
             let ab = a.getTime()
             let newData = { "todo": e.target.todo.value, "state": todostate, "date": date, "id": ab }
             msetData('')
-            axios.post('http://localhost:3030/insert', newData)
+            axios.post(`${process.env.REACT_APP_SERVER}/insert`, newData)
                 .then(res => {
                     let datafilter = res.data.filter(n => n.date === date)
                     isetData(datafilter)
@@ -87,12 +87,12 @@ function Write({ wrcal, date, calendars, nosc1 }) {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3030/abc')
+        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
                 let datas = Array.isArray(res.data) ? res.data.filter(n => n.date === date) : [];
                 isetData(datas)
             })
-        axios.get('http://localhost:3030/abc')
+        axios.get(`${process.env.REACT_APP_SERVER}/abc`)
             .then(res => {
                 setDeldata(Array.isArray(res.data) ? res.data : []);
             })

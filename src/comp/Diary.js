@@ -30,11 +30,11 @@ function Diary({ diary, diaryPop }) {
         setData1([...data1, d])
     }
     useEffect(() => {
-        axios.get('http://localhost:3030/abcd')
+        axios.get(`${process.env.REACT_APP_SERVER}/abcd`)
             .then(res => {
                 console.log(res);
             }, [data1])
-        axios.post('http://localhost:3030/insert1', { "diary": data1 })
+        axios.post(`${process.env.REACT_APP_SERVER}/insert1`, { "diary": data1 })
         
     })
 
