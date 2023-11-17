@@ -1,21 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "나만의 일정 기록 어플",
+  "name": "나의 하루",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "64x64",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "/react-calendar/icons/apple-touch-icon-57x57.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "57x57"
     },
     {
-      "src": "logo512.png",
+      "src": "/react-calendar/icons/apple-touch-icon-152x152.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "152x152"
+    },
+    {
+      "src": "/react-calendar/icons/favicon-196x196.png",
+      "type": "image/png",
+      "sizes": "196x196",
+      "purpose":"any"
     }
   ],
   "start_url": ".",
