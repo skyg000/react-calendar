@@ -17,18 +17,19 @@ function Diary({chat}) {
     const [data1,setData1] = useState([]);
     let insert1 = (e)=>{
         e.preventDefault();
-        let a = e.target;
+        let a = e.target.diary;
         let d = {
             msg: a.name.value,
             code: Date.now(),
         }
         setData1([...data1,d])
     }
-    axios.get('http://localhost:3030/abcd')
+    axios.get(`${process.env.REACT_APP_SERVER}/abcd`)
     .then(res=>{
+        setData1()
         console.log(res);
     })
-    axios.post('http://localhost:3030/insert1',{"diary":data1})
+    axios.post(`${process.env.REACT_APP_SERVER}/insert1`,{"diary":data1})
     return (
         <article className='chat'>
             <motion.div

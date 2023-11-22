@@ -38,8 +38,8 @@ function Write({ wrcal, date, calendars, nosc1 }) {
 
     /* 삭제 */
     const del = (code) => {
-        let deldata = idata.filter(item => item.id !== code)
-        axios.post(`${process.env.REACT_APP_SERVER}/del`,{data : deldata } )
+        let deldata = {data : idata.filter(item => item.id !== code)}
+        axios.post(`${process.env.REACT_APP_SERVER}/del`, deldata)
             .then(res => {
                 isetData(res.data)
             })
